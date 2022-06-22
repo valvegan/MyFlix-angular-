@@ -17,14 +17,21 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { GenreViewComponent } from './genre-view/genre-view.component';
+import { DirectorViewComponent } from './director-view/director-view.component';
+import { ActorViewComponent } from './actor-view/actor-view.component';
+import { SummaryComponent } from './summary/summary.component';
 const appRoutes: Routes = [
   {path: 'welcome', component: WelcomePageComponent},
   {path: 'movies', component: MovieCardComponent},
-  {path: '', redirectTo: 'welcome', pathMatch: 'prefix'}
+  {path: '', redirectTo: 'welcome', pathMatch: 'prefix'},
+  //profile route
+  {path: 'profile', component: ProfilePageComponent}
 ];
 
 @NgModule({
-  declarations: [AppComponent, UserRegistrationFormComponent, UserLoginFormComponent, MovieCardComponent, WelcomePageComponent],
+  declarations: [AppComponent, UserRegistrationFormComponent, UserLoginFormComponent, MovieCardComponent, WelcomePageComponent, ProfilePageComponent, GenreViewComponent, DirectorViewComponent, ActorViewComponent, SummaryComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
