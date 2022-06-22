@@ -23,6 +23,10 @@ The server-side development for myFlix can be accessed [here](https://github.com
 4) Create a new angular service to be able to load data from an api 
 >ng generate service fetch-api-data 
 
+## Dependencies
+1) Material Design
+>ng add @angular/material
+
 ## User stories
 - As a user, I want to be able to receive information on movies, directors, and genres so that I can learn more about movies I’ve watched or am interested in.
 - As a user, I want to be able to create a profile so I can save data about my favorite movies.
