@@ -1,59 +1,31 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title
-      >You can update your profile information below</mat-card-title
-    >
-  </mat-card-header>
-  <mat-card-content>
-    <form>
-        <!-- edit username -->
-      <mat-form-field>
-        <input
-          matInput
-          [(ngModel)]="userData.username"
-          placeholder="Username"
-          type="text"
-          name="username"
-        />
-      </mat-form-field>
-      <!-- edit password -->
-      <mat-form-field>
-        <input
-          matInput
-          [(ngModel)]="userData.password"
-          placeholder="password"
-          type="password"
-          name="password"
-        />
-      </mat-form-field>
-      <!-- edit email -->
-      <mat-form-field>
-        <input
-          matInput
-          [(ngModel)]="userData.email"
-          placeholder="email"
-          type="email"
-          name="email"
-        />
-      </mat-form-field>
-      <!-- edit birthday -->
-      <mat-form-field>
-        <input
-          matInput
-          [(ngModel)]="userData.birthday"
-          placeholder="birthday"
-          type="date"
-          name="birthday"
-        />
-      </mat-form-field>
-    </form>
-  </mat-card-content>
+<div class="user-profile-page">
+    <!-- User Profile -->
+    <mat-card class="user-profile-card">
+        <mat-card-header class="user-profile-card-header">
+            <mat-card-title>Hi, {{user.username}}</mat-card-title>
+            <mat-card-subtitle>Your profile information</mat-card-subtitle>
+        </mat-card-header>
 
-  <mat-card-actions>
-      <button mat-raised-button (click)="editDetails()" 
-      color="primary">Update now</button>
-      <button mat-stroked-button mat-dialog-close 
-      color="secondary">x</button>
+        <!-- View Profile Information -->
+        <mat-card-content class="user-profile-card-content">
+            <p><b>Username:</b>{{user.username}} </p>
+            <p><b>Email:</b>{{user.email}} </p>
+            <p><b>Birthday:</b>{{user.birthdate}}  </p>
+        </mat-card-content>
 
-  </mat-card-actions>
-</mat-card>
+        <!-- Edit Profile Information & Delete Profile -->
+        <mat-card-actions class="user-profile-actions">
+
+            <button mat-raised-button (click)="openDialog()" color="primary">
+                <mat-icon>edit</mat-icon>
+                Edit Profile
+            </button>
+            <button mat-raised-button (click)="deleteProfile()" color="warn">
+                <mat-icon>delete_forever</mat-icon>
+                Delete Profile
+            </button>
+
+        </mat-card-actions>
+    </mat-card>
+
+</div>
