@@ -28,13 +28,10 @@ export class FetchApiDataService {
   }
 
   /** 2. making the api call for the user login endpoint */
-  public userLogin(username: string, password: string): Observable<any> {
+  public userLogin(loginData: any): Observable<any> {
     return this.http
-      .post(apiUrl + 'login', {
-        username: username,
-        password: password,
-      })
-      .pipe(catchError(this.handleError));
+      .post(apiUrl + 'login', loginData)
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   /**3. add movie to user's list of favorites */

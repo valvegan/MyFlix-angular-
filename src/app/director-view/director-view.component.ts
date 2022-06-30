@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { FetchApiDataService } from '../fetch-api-data.service';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-director-view',
@@ -8,9 +7,15 @@ import { FetchApiDataService } from '../fetch-api-data.service';
   styleUrls: ['./director-view.component.scss'],
 })
 export class DirectorViewComponent implements OnInit {
-  director: any = {};
-
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    @Inject(MAT_DIALOG_DATA)
+    public data: {
+      Name: string;
+      Bio: string;
+      Death: string;
+      Birth: string;
+    }
+  ) {}
 
   ngOnInit(): void {}
 }

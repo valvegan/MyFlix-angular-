@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-actor-view',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA)
+  public data: {
+    Name: string;
+    Bio: string;
+    Death: string;
+    Birth: string;
+  }) { }
 
   ngOnInit(): void {
   }

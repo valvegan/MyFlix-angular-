@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-login-form.component.scss'],
 })
 export class UserLoginFormComponent implements OnInit {
-  @Input() userData = { username: '', password: '' };
+  @Input() loginData = { username: '', password: '' };
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -27,20 +27,18 @@ export class UserLoginFormComponent implements OnInit {
 
   // This is the function responsible for sending the form inputs to the backend
   loginUser(): void {
-    this.fetchApiData
-      .userLogin(this.userData.username, this.userData.password)
-      .subscribe((result) => {
-        //setting the user data to local storage
-        localStorage.setItem('user', result.user.username);
-        localStorage.setItem('token', result.token);
-        // Redirect to movies (main) page
-        this.router.navigate(['movies']);
-        // Logic for a successful sign in  goes here! (To be implemented)
-        this.dialogRef.close(); // This will close the modal on success!
-        console.log(result);
-        this.snackBar.open(result.user.username, 'OK', {
-          duration: 2000,
-        });
+    this.fetchApiData.userLogin(this.loginData).subscribe((result) => {
+      //setting the user data to local storage
+      localStorage.setItem('user', result.user.username);
+      localStorage.setItem('token', result.token);
+      // Redirect to movies (main) page
+      this.router.navigate(['movies']);
+      // Logic for a successful sign in  goes here! (To be implemented)
+      this.dialogRef.close(); // This will close the modal on success!
+      console.log(result);
+      this.snackBar.open(result.user.username, 'OK', {
+        duration: 2000,
       });
+    });
   }
 }

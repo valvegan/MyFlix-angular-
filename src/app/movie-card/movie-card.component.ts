@@ -4,9 +4,11 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
 import { SummaryComponent } from '../summary/summary.component';
+import { ActorViewComponent } from '../actor-view/actor-view.component';
 //angular material imports
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-movie-card',
@@ -49,25 +51,56 @@ export class MovieCardComponent implements OnInit{
   }
 
   /**
-   * checks if a movie is included in the user's list of favorite movies
-   * @param id
-   * @returns true, if the movie is a favorite move, else false
+   * check if a movie is included in the user's list of favorite movies
    */
   isFav(id: string): boolean {
     return this.favoriteMovies.includes(id);
   }
 
   /**opens the genre dialog */
-
+  openGenre(name: string, description: string): void{
+    this.dialog.open(GenreViewComponent,{
+      data: {
+        Name: name,
+        Description: description
+      }
+    })
+  }
   //**opens the actor dialog */
+  openActor(name: string, bio: string, birth: Date, death: Date): void{
+    this.dialog.open(ActorViewComponent,{
+      data: {
+        Name: name,
+        Bio: bio,
+        Death: death,
+        Birthdate: birth,
+      }
+    })
+  }
 
   //**opens the summary(synopsis) dialog */
+  openSummary(title: string, description: string): void{
+    this.dialog.open(SummaryComponent,{
+      data: {
+        Title: title,
+        Description: description,
+      }
+    })
+  }
 
   /**
    * opens the director dialog
    */
-  openDirectorDialog(name: string, bio: string, birthday: Date): void {
-    this.dialog.open(DirectorViewComponent);
+  openDirector(name: string, bio: string, birth: Date, death: Date): void {
+    this.dialog.open(DirectorViewComponent,
+      {
+        data: {
+          Name: name,
+          Bio: bio,
+          Birth: birth,
+          Death: death
+        }
+      });
   }
 
   /**

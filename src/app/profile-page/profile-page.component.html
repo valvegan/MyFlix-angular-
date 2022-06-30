@@ -1,31 +1,38 @@
-<div class="user-profile-page">
-    <!-- User Profile -->
-    <mat-card class="user-profile-card">
-        <mat-card-header class="user-profile-card-header">
-            <mat-card-title>Hi, {{user.username}}</mat-card-title>
-            <mat-card-subtitle>Your profile information</mat-card-subtitle>
-        </mat-card-header>
+<div class="user-profile-container">
+  <!-- User Profile -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Hi, {{ user.username }}</mat-card-title>
+      <mat-card-subtitle>Your profile information</mat-card-subtitle>
+    </mat-card-header>
+    <!-- View Profile Information -->
+    <mat-card-content>
+      <p><b>Username:</b>{{ user.username }}</p>
+      <p><b>Email:</b>{{ user.email }}</p>
+      <p><b>Birthday:</b>{{ user.birthdate }}</p>
+    </mat-card-content>
+    <!-- Edit and delete profile-->
+    <mat-card-actions>
+      <button mat-raised-button (click)="openDialog()" color="primary">
+        <mat-icon>edit</mat-icon>
+        Edit Profile
+      </button>
+      <button mat-raised-button (click)="deleteProfile()" color="warn">
+        <mat-icon>delete_forever</mat-icon>
+        Delete Profile
+      </button>
+    </mat-card-actions>
+  </mat-card>
 
-        <!-- View Profile Information -->
-        <mat-card-content class="user-profile-card-content">
-            <p><b>Username:</b>{{user.username}} </p>
-            <p><b>Email:</b>{{user.email}} </p>
-            <p><b>Birthday:</b>{{user.birthdate}}  </p>
-        </mat-card-content>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Your favorite movies </mat-card-title>
+    </mat-card-header>
 
-        <!-- Edit Profile Information & Delete Profile -->
-        <mat-card-actions class="user-profile-actions">
-
-            <button mat-raised-button (click)="openDialog()" color="primary">
-                <mat-icon>edit</mat-icon>
-                Edit Profile
-            </button>
-            <button mat-raised-button (click)="deleteProfile()" color="warn">
-                <mat-icon>delete_forever</mat-icon>
-                Delete Profile
-            </button>
-
-        </mat-card-actions>
+    <mat-card *ngFor="let movie of user.favoriteMovies">
+      <mat-card-title>{{ movie.Title }}</mat-card-title>
+      <!-- image -->
+      <img src="{{ movie.ImagePath }}" alt="{{ movie.Title }}" />
     </mat-card>
-
+  </mat-card>
 </div>

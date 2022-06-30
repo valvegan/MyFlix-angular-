@@ -25,6 +25,8 @@ export class NavigationComponent implements OnInit {
   }
   /**navigation to the welcome page after logging out */
   logOut():void{
+    //clear localStorage to remove login details 
+    localStorage.clear();
     this.router.navigate(['welcome'])
   }
 
