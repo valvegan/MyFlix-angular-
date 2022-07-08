@@ -1,0 +1,68 @@
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Rum+Raisin&display=swap");
+
+//color variables
+//color variables
+$buttons-primary: #75ca60;
+$buttons-hover: #58aa43;
+$buttons-delete: #972d2d;
+$buttons-delete-darker: #641212;
+$backgrounds: #202020;
+$card-bg: #110307;
+$text-main: #eeeeee;
+$titles: #cf6628;
+$titles-hover: #92461a;
+$buttons-primary-text: #141414;
+$borders: #dffd71;
+
+//font variables
+$main-font: "Montserrat", sans-serif;
+$titles-font: "Rum Raisin", sans-serif;
+
+*{
+    background-color: $backgrounds;
+}
+.main-page{
+    padding: 40px
+}
+h1 {
+  font-family: $titles-font;
+  color: $titles;
+  line-height: 01;
+  font-size: 7rem;
+}
+.welcome-buttons{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    
+}
+.btn{
+    font-family: $main-font;
+    font-size: 1.5rem;
+    margin: 10px;
+    background-color: $buttons-primary;
+    color: $buttons-primary-text
+}
+.btn:hover{
+    background-color: $buttons-hover;
+}
+
+.app-description{
+    font-family: $main-font;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 25px;
+    margin-top: 40px;
+    padding: 10px;
+    color: $titles;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.247);
+    border: 2px solid rgba(255, 255, 255, 0.137);
+    border-radius: 10px;
+}
+.app-description:hover{
+    background-color: rgba(255, 255, 255, 0.055);
+    border: 2px solid rgba(255, 255, 255, 0.404)
+}

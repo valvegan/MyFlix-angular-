@@ -1,8 +1,8 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 //to close the dialog on success
 import { MatDialogRef } from '@angular/material/dialog';
 
@@ -12,6 +12,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'profile-page',
   templateUrl: 'profile-page.component.html',
+  styleUrls: ['./profile-page.component.scss'],
 })
 export class ProfilePageComponent {
   user: any = {};
@@ -65,6 +66,7 @@ export class ProfilePageComponent {
 @Component({
   selector: 'profile-info',
   templateUrl: 'profile-edit.component.html',
+  styleUrls: ['./profile-edit.component.scss'],
 })
 export class EditProfileComponent implements OnInit {
   /**

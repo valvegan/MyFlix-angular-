@@ -1,3 +1,4 @@
+<app-navigation></app-navigation>
 <div class="user-profile-container">
   <!-- User Profile -->
   <mat-card>
@@ -22,17 +23,5 @@
         Delete Profile
       </button>
     </mat-card-actions>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title> Your favorite movies </mat-card-title>
-    </mat-card-header>
-
-    <mat-card *ngFor="let movie of user.favoriteMovies">
-      <mat-card-title>{{ movie.Title }}</mat-card-title>
-      <!-- image -->
-      <img src="{{ movie.ImagePath }}" alt="{{ movie.Title }}" />
-    </mat-card>
   </mat-card>
 </div>
