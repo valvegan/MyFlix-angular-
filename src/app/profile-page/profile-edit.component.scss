@@ -1,0 +1,59 @@
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Rum+Raisin&display=swap");
+
+//color variables
+//color variables
+$buttons-primary: #75ca60;
+$buttons-hover: #58aa43;
+$buttons-delete: #972d2d;
+$buttons-delete-darker: #641212;
+$backgrounds: #202020;
+$backgrounds2: #5a5a5a;
+$card-bg: #110307;
+$text-main: #eeeeee;
+$titles: #cf6628;
+$titles-hover: #92461a;
+$buttons-primary-text: #141414;
+$borders: #dffd71;
+
+//font variables
+$main-font: "Montserrat", sans-serif;
+$titles-font: "Rum Raisin", sans-serif;
+
+.mat-card{
+    background-color: $backgrounds2;
+}
+.mat-dialog-container{
+    background-color: $backgrounds;
+    padding: 0 !important
+}
+
+.mat-card-title {
+    font-family: $titles-font;
+    font-size: 3rem;
+    padding: 20px 0px 20px 0px;
+    line-height: 1;
+    color: $titles;
+    text-align: center;
+  }
+  
+  .mat-dialog-content {
+    font-family: $main-font;
+    font-size: 1.1rem;
+    color: $buttons-primary-text;
+  }
+  .mat-button:hover{
+      color: $titles-hover
+  }
+
+  .mat-icon{
+      color: black;
+      margin: auto
+  }
+.mat-card-actions{
+    margin: auto;
+    text-align: center;
+    button{
+        background-color: $buttons-primary
+    }
+}

@@ -14,6 +14,7 @@ export class ActorViewComponent implements OnInit {
     Bio: string;
     Death: string;
     Birth: string;
+    Movies: object;
   }) { }
 
   ngOnInit(): void {

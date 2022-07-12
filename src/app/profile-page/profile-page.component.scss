@@ -8,6 +8,7 @@ $buttons-hover: #58aa43;
 $buttons-delete: #972d2d;
 $buttons-delete-darker: #641212;
 $backgrounds: #202020;
+$backgrounds2: #5a5a5a;
 $card-bg: #110307;
 $text-main: #eeeeee;
 $titles: #cf6628;
@@ -19,60 +20,45 @@ $borders: #dffd71;
 $main-font: "Montserrat", sans-serif;
 $titles-font: "Rum Raisin", sans-serif;
 
-*{
-    background-color: $backgrounds;
+.mat-card {
+  background-color: $backgrounds;
+  border: 2px solid black;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
 }
-.mat-card-title{
-font-family: $titles-font;
-font-size: 3rem;
-margin: 20px;
+.user-profile-container {
+  background-color: $backgrounds2;
+  height: 700px;
+  padding-top: 20px;
 }
-.mat-card-subtitle{
-    font-family: $main-font;
-}
-
-
-.main-page{
-    padding: 40px
-}
-h1 {
+.mat-card-title {
   font-family: $titles-font;
+  font-size: 4rem;
+  padding: 20px 0px 20px 0px;
+  line-height: 1;
   color: $titles;
-  line-height: 01;
-  font-size: 7rem;
+  text-align: center;
 }
-.welcome-buttons{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    
+.mat-card-subtitle {
+  font-size: 1.4rem;
+  font-family: $main-font;
 }
-.btn{
-    font-family: $main-font;
-    font-size: 1.5rem;
-    margin: 10px;
-    background-color: $buttons-primary;
-    color: $buttons-primary-text
+.mat-card-header {
+  display: flex;
+  justify-content: center;
 }
-.btn:hover{
-    background-color: $buttons-hover;
+.mat-card-content {
+  display: flex column;
+  font-family: $main-font;
+  font-size: 2rem;
+  color: $buttons-primary;
+  line-height: 1;
+  text-align: center;
 }
 
-.app-description{
-    font-family: $main-font;
-    font-size: 2rem;
-    line-height: 1.2;
-    margin: 25px;
-    margin-top: 40px;
-    padding: 10px;
-    color: $titles;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.247);
-    border: 2px solid rgba(255, 255, 255, 0.137);
-    border-radius: 10px;
-}
-.app-description:hover{
-    background-color: rgba(255, 255, 255, 0.055);
-    border: 2px solid rgba(255, 255, 255, 0.404)
+.mat-card-actions {
+  display: flex;
+  justify-content: center;
 }

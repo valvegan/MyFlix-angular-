@@ -1,0 +1,33 @@
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Rum+Raisin&display=swap");
+
+//color variables
+//color variables
+$buttons-primary: #75ca60;
+$buttons-hover: #58aa43;
+$buttons-delete: #972d2d;
+$buttons-delete-darker: #641212;
+$backgrounds: #202020;
+$backgrounds2: #5a5a5a;
+$card-bg: #110307;
+$text-main: #eeeeee;
+$titles: #cf6628;
+$titles-hover: #92461a;
+$buttons-primary-text: #141414;
+$borders: #dffd71;
+
+//font variables
+$main-font: "Montserrat", sans-serif;
+$titles-font: "Rum Raisin", sans-serif;
+
+.navbar {
+  background-color: $backgrounds;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  button {
+    font-family: $main-font;
+    font-size: 1.5rem;
+    color: $buttons-primary;
+  }
+}

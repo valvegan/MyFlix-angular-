@@ -1,11 +1,75 @@
-.container{
-    display: flex;
-    flex: 1 1;
-    overflow: scroll
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Rum+Raisin&display=swap");
+
+//color variables
+//color variables
+$buttons-primary: #75ca60;
+$buttons-hover: #58aa43;
+$buttons-delete: #972d2d;
+$buttons-delete-darker: #641212;
+$backgrounds: #202020;
+$backgrounds2: #5a5a5a;
+$card-bg: #110307;
+$text-main: #eeeeee;
+$titles: #cf6628;
+$titles-hover: #92461a;
+$buttons-primary-text: #141414;
+$borders: #dffd71;
+
+//font variables
+$main-font: "Montserrat", sans-serif;
+$titles-font: "Rum Raisin", sans-serif;
+
+.container {
+  display: flex column;
+  overflow: scroll;
+  background-color: $backgrounds2;
 }
-.movie-card{
-    width: 40
+
+.movie-card img {
+  width: 100%;
 }
-.movie-card img{
-    width: 100%
+
+.mat-card-title {
+  font-family: $titles-font;
+  font-size: 3rem;
+  padding: 20px 0px 20px 0px;
+  line-height: 1;
+  color: $titles;
+}
+
+.mat-card-header {
+  display: flex row;
+  justify-content: center;
+  align-items: center;
+  .mat-button .mat-icon {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+.mat-card-subtitle {
+  font-family: $main-font;
+  font-size: 1.4rem;
+  color: $buttons-primary;
+  text-align: center;
+}
+
+.mat-button {
+  font-family: $main-font;
+  font-size: 1.4rem;
+  color: $titles;
+}
+.mat-button:hover{
+    color: $titles-hover
+}
+.movie-card {
+  border: 2px solid black;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: $backgrounds;
 }

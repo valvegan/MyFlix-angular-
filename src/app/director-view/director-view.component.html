@@ -9,9 +9,7 @@
     <br />
     <b>Born: </b>{{ data.Birth }}
     <br/>
-    <b>Death: </b>{{ data.Death }}
-    <br />
-    <b>Movies: </b>
+    <b *ngIf="data.Death">Death: </b>{{ data.Death }}
     <br />
   </mat-dialog-content>
   <mat-card-actions>

@@ -2,9 +2,30 @@
 <div class="container">
   <mat-card *ngFor="let movie of movies; let i = index" class="movie-card">
     <mat-card-header>
-      <mat-card-title>{{ movie.Title }}</mat-card-title>
-      <!-- director link -->
-      <mat-card-subtitle>Directed by:</mat-card-subtitle>
+      <mat-card-title>{{ movie.Title }} </mat-card-title>
+      <!-- heart icon toggle to add or remove movie from user's favorites -->
+      <button
+        mat-button
+        *ngIf="!isFav(movie._id)"
+        (click)="addFavorite(movie._id)"
+        color="primary"
+      >
+        <!-- heart icon border-->
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      <button
+        mat-button
+        *ngIf="isFav(movie._id)"
+        (click)="removeFavorite(movie._id)"
+        color="primary"
+      >
+        <!-- heart icon full-->
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </mat-card-header>
+    <!-- director link -->
+    <mat-card-subtitle
+      >Directed by:
       <button
         mat-button
         (click)="
@@ -19,61 +40,50 @@
       >
         {{ movie.Director.Name }}
       </button>
-    </mat-card-header>
+    </mat-card-subtitle>
+
     <!-- image -->
     <img src="{{ movie.ImagePath }}" alt="{{ movie.Title }}" />
     <mat-card-actions>
       <!-- genre link -->
-      <mat-card-subtitle>Genre:</mat-card-subtitle>
-      <button
-        mat-button
-        (click)="openGenre(movie.Genre.Name, movie.Genre.Description)"
-        color="primary"
-      >
-        {{ movie.Genre.Name }}
-      </button>
+      <mat-card-subtitle
+        >Genre:<button
+          mat-button
+          (click)="openGenre(movie.Genre.Name, movie.Genre.Description)"
+          color="primary"
+        >
+          {{ movie.Genre.Name }}
+        </button>
+      </mat-card-subtitle>
       <!--actor link -->
-      <mat-card-subtitle>Main Actor:</mat-card-subtitle>
-      <button
-        mat-button
-        (click)="
-          openActor(
-            movie.Actors[0].Name,
-            movie.Actors[0].Bio,
-            movie.Actors[0].Birth,
-            movie.Actors[0].Death
-          )
-        "
-        color="primary"
+      <mat-card-subtitle *ngIf="movie.Actors[0].Name"
+        >Main Actor:<button
+          mat-button
+          (click)="
+            openActor(
+              movie.Actors[0].Name,
+              movie.Actors[0].Bio,
+              movie.Actors[0].Birth,
+              movie.Actors[0].Death,
+              movie.Actors[0].Movies
+            )
+          "
+          color="primary"
+        >
+          {{ movie.Actors[0].Name }}
+        </button></mat-card-subtitle
       >
-        {{ movie.Actors[0].Name }}
-      </button>
-      <!--summary link -->
-      <button
-        mat-button
-        (click)="openSummary(movie.Title, movie.Description)"
-        color="primary"
-      >
-        Synopsis
-      </button>
 
-      <!-- heart icon toggle to add or remove movie from user's favorites -->
-      <button
-        mat-button
-        *ngIf="!isFav(movie._id)"
-        (click)="addFavorite(movie._id)"
-        color="primary"
+      <!--summary link -->
+      <mat-card-subtitle
+        ><button
+          mat-button
+          (click)="openSummary(movie.Title, movie.Description)"
+          color="primary"
+        >
+          Synopsis
+        </button></mat-card-subtitle
       >
-        <mat-icon>favorite_border</mat-icon>
-      </button>
-      <button
-        mat-button
-        *ngIf="isFav(movie._id)"
-        (click)="removeFavorite(movie._id)"
-        color="primary"
-      >
-        <mat-icon>favorite</mat-icon>
-      </button>
     </mat-card-actions>
   </mat-card>
 </div>
