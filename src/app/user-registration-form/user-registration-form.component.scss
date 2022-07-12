@@ -8,6 +8,7 @@ $buttons-hover: #58aa43;
 $buttons-delete: #972d2d;
 $buttons-delete-darker: #641212;
 $backgrounds: #202020;
+$backgrounds2: #5a5a5a;
 $card-bg: #110307;
 $text-main: #eeeeee;
 $titles: #cf6628;
@@ -19,15 +20,40 @@ $borders: #dffd71;
 $main-font: "Montserrat", sans-serif;
 $titles-font: "Rum Raisin", sans-serif;
 
-
-.mat-raised-button{
-    font-family: $main-font;
-    font-size: 1.5rem;
-    margin: 10px;
-    background-color: $buttons-primary;
-    color: $buttons-primary-text;
-    
+.mat-card{
+    background-color: $backgrounds2;
 }
-.mat-raised-button:hover{
-    background-color: $buttons-hover;
+.mat-dialog-container{
+    background-color: $backgrounds;
+    padding: 0 !important
+}
+
+.mat-card-title {
+    font-family: $titles-font;
+    font-size: 3rem;
+    padding: 20px 0px 20px 0px;
+    line-height: 1;
+    color: $titles;
+    text-align: center;
+  }
+  
+  .mat-dialog-content {
+    font-family: $main-font;
+    font-size: 1.1rem;
+    color: $buttons-primary-text;
+  }
+  .mat-button:hover{
+      color: $titles-hover
+  }
+
+  .mat-icon{
+      color: black;
+      margin: auto
+  }
+.mat-card-actions{
+    margin: auto;
+    text-align: center;
+    button{
+        background-color: $buttons-primary
+    }
 }

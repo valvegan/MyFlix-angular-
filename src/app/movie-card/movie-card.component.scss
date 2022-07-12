@@ -73,3 +73,18 @@ $titles-font: "Rum Raisin", sans-serif;
   border-radius: 10px;
   background-color: $backgrounds;
 }
+/*media queries*/
+@media all and (min-width: 1000px) {
+    .movie-card{
+        width: 500px
+    }
+  .container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 0;
+
+  }
+
+  }
