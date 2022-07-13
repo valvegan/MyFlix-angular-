@@ -33,7 +33,7 @@ export class UserLoginFormComponent implements OnInit {
       localStorage.setItem('token', result.token);
       // Redirect to movies (main) page
       this.router.navigate(['movies']);
-      // Logic for a successful sign in  goes here! (To be implemented)
+      // Logic for a successful sign in  goes here!
       this.dialogRef.close(); // This will close the modal on success!
       console.log(result);
       this.snackBar.open(result.user.username, 'OK', {
