@@ -47,10 +47,13 @@ The server-side development for myFlix can be accessed [here](https://github.com
 - Upon clicking on a particular movie, users will be taken to a single movie view, where additional movie details will be displayed. 
 - description view
 <img src="images_github/description.png" height="auto" width="500" alt="description">
+
 - director view
 <img src="images_github/director.png" height="auto" width="500" alt="director">
+
 - genre view
 <img src="images_github/genre.png" height="auto" width="500" alt="genre">
+
 - actor view
 <img src="images_github/actor.png" height="auto" width="500" alt="actor">
 
