@@ -23,9 +23,9 @@ $titles-font: "Rum Raisin", sans-serif;
 .mat-card{
     background-color: $backgrounds2;
 }
+
 .mat-dialog-container{
     background-color: $backgrounds;
-    padding: 0 !important
 }
 
 .mat-card-title {
@@ -40,8 +40,10 @@ $titles-font: "Rum Raisin", sans-serif;
   .mat-dialog-content {
     font-family: $main-font;
     font-size: 1.1rem;
-    color: $buttons-primary-text;
+    color: $text-main;
+    line-height: 1.5;
   }
+
   .mat-button:hover{
       color: $titles-hover
   }

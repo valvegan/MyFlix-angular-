@@ -20,40 +20,45 @@ $borders: #dffd71;
 $main-font: "Montserrat", sans-serif;
 $titles-font: "Rum Raisin", sans-serif;
 
-.mat-card{
-    background-color: $backgrounds2;
+.mat-card {
+  background-color: $backgrounds;
 }
-.mat-dialog-container{
-    background-color: $backgrounds;
-    padding: 0 !important
+.mat-input-element {
+  font-family: $main-font !important;
+  color: $text-main;
 }
 
 .mat-card-title {
-    font-family: $titles-font;
-    font-size: 3rem;
-    padding: 20px 0px 20px 0px;
-    line-height: 1;
-    color: $titles;
-    text-align: center;
-  }
-  
-  .mat-dialog-content {
-    font-family: $main-font;
-    font-size: 1.1rem;
-    color: $buttons-primary-text;
-  }
-  .mat-button:hover{
-      color: $titles-hover
-  }
+  font-family: $titles-font;
+  font-size: 3rem;
+  padding: 20px 0px 20px 0px;
+  line-height: 1;
+  color: $titles;
+  text-align: center;
+}
 
-  .mat-icon{
-      color: black;
-      margin: auto
+.mat-dialog-content {
+  font-family: $main-font;
+  font-size: 1.1rem;
+  color: $text-main;
+  line-height: 1.5;
+}
+
+.mat-button:hover {
+  color: $titles-hover;
+}
+
+.mat-icon {
+  color: black;
+  margin: auto;
+}
+.mat-card-actions {
+  margin: auto;
+  text-align: center;
+  button {
+    background-color: $buttons-primary;
+    color: black;
+    font-family: $main-font;
+    font-size: 1.5rem;
   }
-.mat-card-actions{
-    margin: auto;
-    text-align: center;
-    button{
-        background-color: $buttons-primary
-    }
 }
