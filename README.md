@@ -4,11 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 MyFlix is a small app that showcases various informations from a small database (REST API) of movies. Users can register, update/add information about themselves (securely via password hashing) and add/remove movie titles to a list of their favourites. 
 
-The client-side for myFlix is developed using ANGULAR, HTML5, and SCSS
+The client-side for myFlix is developed using ANGULAR (TypeScript), HTML5, and SCSS
 
 The server-side development for myFlix can be accessed [here](https://github.com/valvegan/movie_api)
 
-## A live preview of the app can be accessed [here](link )
+## A live preview of the app can be accessed [here](https://valvegan.github.io/MyFlix-angular-/welcome) 
 
 ## Prerequisites
 - Node and latest version of npm
@@ -57,9 +57,13 @@ The server-side development for myFlix can be accessed [here](https://github.com
 - A profile view, where users can view their details and update them if they wish to 
 <img src="images_github/profile.png" height="auto" width="500" alt="profile_page">
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Build process
+1) To link the remote repository to the local project folder 
+>git remote add origin https://github.com/(Gitgub_username)/(repository_name).git
+2) Add angular-cli-ghpages 
+>ng add angular-cli-ghpages
+3) To build application on github Pages 
+>ng deploy --base-href=/MyFlix-angular-/
 
 ## Personal reflections on the project
 This was my last project of the "full stack immersion" program by CareerFoundry. I found it quite time consuming and a little bit tricky, since I had to switch to a different framework after completing quite a few projects in React. I first had to learn the basis of TypeScript, and then dive into Angular and its component structure. Using Angular Material for the user interface has been extremely helpful, although I'm still not completely confident in working with it and it's been a tough leaning curve. Overall, I totally see how Angular with TypeScript can be extremely useful for complex and data heavy projects, but I feel like I do need more practice with it in order to master it at the same level I feel with React/Javascript. 
