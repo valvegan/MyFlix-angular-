@@ -32,7 +32,11 @@ export class MovieCardComponent implements OnInit {
     this.getFavoriteMovies();
   }
 
-  /**gets movies from the api call and returns data */
+  /**
+   * gets movies from the api call and returns data
+   * @returns array of movies
+   * @function getAllMovies
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((res: any) => {
       this.movies = res;
@@ -41,7 +45,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  //**gets favorite movies from the user data */
+  /**
+   * gets favorite movies from the user data
+   * @returns array of user's favorite movies (id's)
+   * @function getFavoriteMovies
+   */
   getFavoriteMovies(): void {
     this.fetchApiData.getFavorites().subscribe((res: any) => {
       this.favoriteMovies = res;
@@ -51,13 +59,19 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * check if a movie is included in the user's list of favorite movies
+   * checks if a movie is included in the user's list of favorite movies
+   * @param id
+   * @returns true, if the movie is a favorite move, else false
    */
   isFav(id: string): boolean {
     return this.favoriteMovies.includes(id);
   }
 
-  /**opens the genre dialog */
+  /**
+   * opens the genre dialog
+   * @param name
+   * @param description
+   */
   openGenre(name: string, description: string): void {
     this.dialog.open(GenreViewComponent, {
       data: {
@@ -66,7 +80,15 @@ export class MovieCardComponent implements OnInit {
       },
     });
   }
-  //**opens the actor dialog */
+
+  /**
+   * opens the actor dialog
+   * @param name
+   * @param bio
+   * @param birth
+   * @param death
+   * @param movies
+   */
   openActor(
     name: string,
     bio: string,
@@ -85,7 +107,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  //**opens the summary(synopsis) dialog */
+  /**
+   * opens the summary(synopsis) dialog
+   * @param title
+   * @param description
+   */
   openSummary(title: string, description: string): void {
     this.dialog.open(SummaryComponent, {
       data: {
@@ -97,13 +123,12 @@ export class MovieCardComponent implements OnInit {
 
   /**
    * opens the director dialog
+   * @param name
+   * @param bio
+   * @param birth
+   * @param death
    */
-  openDirector(
-    name: string,
-    bio: string,
-    birth: string,
-    death: string,
-  ): void {
+  openDirector(name: string, bio: string, birth: string, death: string): void {
     this.dialog.open(DirectorViewComponent, {
       data: {
         Name: name,
@@ -133,7 +158,6 @@ export class MovieCardComponent implements OnInit {
    * @param id
    * @function removeFavoriteMovie
    */
-
   removeFavorite(id: string): void {
     console.log(id);
     this.fetchApiData.deleteFavorite(id).subscribe((result) => {

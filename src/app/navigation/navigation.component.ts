@@ -15,15 +15,21 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /**navigation to the movies page */
+  /**
+   * navigation to the movies page
+   */
   toMovies():void{
     this.router.navigate(['movies'])
   }
-  /**navigation to the profile page */
+  /**
+   * navigation to the profile page
+   */
   toProfile():void{
     this.router.navigate(['profile'])
   }
-  /**navigation to the welcome page after logging out */
+  /**
+   * navigation to the welcome page after logging out
+   */
   logOut():void{
     //clear localStorage to remove login details 
     localStorage.clear();

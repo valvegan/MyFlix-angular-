@@ -30,7 +30,7 @@ export class ProfilePageComponent {
   }
 
   /**
-   * Gets user data and sets the data into the variable "user"
+   * Gets user data from the backend and sets the data into the variable "user"
    * @returns object holding user information
    * @function getUser
    */
@@ -40,12 +40,18 @@ export class ProfilePageComponent {
       return this.user;
     });
   }
-  /**opens the dialog where the user can edit their profile details */
+
+  /**
+   * opens the dialog where the user can edit their profile details
+   */
   openDialog() {
     this.dialog.open(EditProfileComponent);
   }
 
-  /**deletes the entire profile and redirects the user to the welcome page */
+  /**
+   * deletes the entire profile and redirects the user to the welcome page
+   * @function deleteUser
+   */
   deleteProfile(): void {
     //"confirm" opens a "default" dialog popul
     if (confirm('Are you sure you want to delete your profile permanently?')) {
@@ -62,7 +68,9 @@ export class ProfilePageComponent {
   }
 }
 
-/**component to show the current details of the logged in user */
+/**
+ * component to show the current details of the logged in user
+ */
 @Component({
   selector: 'profile-info',
   templateUrl: 'profile-edit.component.html',
