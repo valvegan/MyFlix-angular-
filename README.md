@@ -34,7 +34,7 @@ The server-side development for myFlix can be accessed [here](https://github.com
 >npm install typedoc --save-dev
 - Make sure that the code is commented 
 - to create the documentation:
->typedoc --entryPointStrategy expand ./src
+>npx typedoc --entryPointStrategy expand ./src
 
 ## User stories
 - As a user, I want to be able to receive information on movies, directors, and genres so that I can learn more about movies I’ve watched or am interested in.
