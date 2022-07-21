@@ -14,18 +14,27 @@ The server-side development for myFlix can be accessed [here](https://github.com
 - Node and latest version of npm
 
 ## Setting up the development environment
-1) Make sure the latest version of angular is installed (this project is using version 13.3.7)
+- Make sure the latest version of angular is installed (this project is using version 13.3.7)
 >npm install -g @angular/cli@latest
-2) create a new application 
+- create a new application 
 >ng new myFlix-Angular-client
-3) Run the app 
+- Run the app 
 >ng serve --open
-4) Create a new angular service to be able to load data from an api 
+- Create a new angular service to be able to load data from an api 
 >ng generate service fetch-api-data 
+- To create a new component 
+>ng generate component my-component-name
 
 ## Dependencies
 1) Material Design
 >ng add @angular/material
+
+## TypeDoc documentation
+- To install typeDoc:
+>npm install typedoc --save-dev
+- Make sure that the code is commented 
+- to create the documentation:
+>typedoc --entryPointStrategy expand ./src
 
 ## User stories
 - As a user, I want to be able to receive information on movies, directors, and genres so that I can learn more about movies I’ve watched or am interested in.
